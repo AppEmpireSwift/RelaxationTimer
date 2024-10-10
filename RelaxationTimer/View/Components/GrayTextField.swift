@@ -42,7 +42,7 @@ struct GrayTextField: View {
     
     private func validateInput() {
         isSubmitted = true
-        if title == "Time" && !isTimeFormatValid(textToChange) {
+        if title == "Time (eg 15:00)" && !isTimeFormatValid(textToChange) {
             isError = true
             errorMessage = "Time should be in MM:SS format"
         } else {
