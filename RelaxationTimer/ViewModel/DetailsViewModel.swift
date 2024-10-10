@@ -131,7 +131,9 @@ class DetailsViewModel: ObservableObject {
 
     func parseTimeString(_ timeString: String) -> Int {
         let components = timeString.split(separator: ":")
-        if components.count == 2, let minutes = Int(components[0]), let seconds = Int(components[1]) {
+        if components.count == 2,
+            let minutes = Int(components[0]),
+            let seconds = Int(components[1]) {
             return minutes * 60 + seconds
         } else {
             return 0

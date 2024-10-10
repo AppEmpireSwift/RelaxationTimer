@@ -56,11 +56,12 @@ struct DetailsView: View {
                         .font(.system(size: 45))
                         .fontWeight(.heavy)
                     Text(detailsVM.timer.name)
-                    ProgressView(
-                        color: detailsVM.timer.color,
-                        totalTime: detailsVM.totalTime,
-                        elapsedTime: detailsVM.elapsedTime
-                    )
+                    
+                    ProgressView(value: detailsVM.elapsedTime / detailsVM.totalTime)
+                        .progressViewStyle(LinearProgressViewStyle())
+                        .tint(detailsVM.timer.color)
+                        .frame(width: geo.size.width * 0.8, height: 10)
+
                     ColorsStackView(selectedColor: $detailsVM.timer.color, enableToChange: false)
                 }
                 .padding()
@@ -98,3 +99,4 @@ extension DetailsView {
         }
     }
 }
+
