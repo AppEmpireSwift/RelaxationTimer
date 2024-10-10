@@ -12,12 +12,11 @@ struct GrayTextField: View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
                 TextField(title, text: $textToChange)
-                    .onSubmit {
-                        validateInput()
-                    }
+                    
                     .onChange(of: textToChange) { newValue in
                         if title == "Time (eg 15:00)" {
                             textToChange = formatTimeInput(newValue)
+                            validateInput()
                         }
                     }
                 if let subtitle {
