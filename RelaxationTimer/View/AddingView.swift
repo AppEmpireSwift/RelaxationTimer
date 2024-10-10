@@ -31,7 +31,7 @@ struct AddingView: View {
                 }
                 
                 GrayTextField(textToChange: $timerVM.newTimer.name, title: "Name of timer")
-                GrayTextField(textToChange: $timerVM.newTimer.time, title: "Time", subtitle: "minutes")
+                GrayTextField(textToChange: $timerVM.newTimer.time, title: "Time (eg 15:00)", subtitle: "minutes")
                 
                 if timerVM.newTimer.sound != nil {
                     Button {
